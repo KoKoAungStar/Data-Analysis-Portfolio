@@ -52,11 +52,19 @@
 				that is align with user requirements. Then, I collect the data, clean and make it useful for different
 				departments.</p>
 			<ul class="actions">
-				<li><a href="https://github.com/KoKoAungStar/DataAnalystBootcamp/blob/main/Ko%20Ko%20Aung.pdf" target="_blank" class="button">Download CV</a></li>
-			</ul>
-			<ul class="actions">
-    <li><a href="./Ko_Ko_Aung.pdf" download="Ko_Ko_Aung_CV.pdf" class="button">Download CV</a></li>
+    <li><button class="button" onclick="downloadCV()">Download CV</button></li>
 </ul>
+
+<script>
+    function downloadCV() {
+        const link = document.createElement('a');
+        link.href = './Ko_Ko_Aung.pdf'; // Adjust path if needed
+        link.download = 'Ko_Ko_Aung_CV.pdf'; // Optional: specifies the downloaded filename
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+</script>
 		</section>
 
 		<!-- Two -->
