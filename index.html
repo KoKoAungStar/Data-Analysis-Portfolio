@@ -2,148 +2,177 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ko Ko Aung - Data Analyst</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ko Ko Aung | Data Analyst</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f7fa;
-      color: #333;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      overflow-x: hidden;
       scroll-behavior: smooth;
     }
+
     header {
-      background: linear-gradient(135deg, #00bcd4, #2196f3);
-      color: white;
+      text-align: center;
       padding: 4rem 1rem;
-      text-align: center;
+      animation: fadeIn 2s ease-in-out;
     }
-    .avatar {
-      width: 150px;
+
+    header img {
       border-radius: 50%;
-      margin-bottom: 1rem;
-      border: 4px solid white;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border: 4px solid #fff;
     }
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      font-weight: bold;
+
+    header h1 {
+      margin-top: 1rem;
+      font-size: 2.5rem;
+      color: #00f7ff;
+      text-shadow: 0 0 10px #00f7ff;
     }
-    .card:hover {
-      transform: translateY(-5px);
-      transition: all 0.3s ease-in-out;
+
+    header p {
+      font-size: 1.2rem;
+      color: #eee;
     }
-    .prolink {
-      text-decoration: none;
-      color: #007bff;
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
     }
-    .prolink:hover {
-      text-decoration: underline;
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      animation: slideIn 2s ease-in-out;
     }
+
+    .project {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid #00f7ff88;
+      border-radius: 12px;
+      padding: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 247, 255, 0.3);
+    }
+
+    .project img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .project h3 {
+      color: #00f7ff;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .project p {
+      color: #ccc;
+    }
+
     footer {
-      background-color: #222;
-      color: white;
-      padding: 2rem;
       text-align: center;
+      padding: 2rem;
+      background-color: #111;
+      margin-top: 2rem;
+    }
+
+    .icons a {
+      color: #00f7ff;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .icons a:hover {
+      transform: scale(1.2);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <img src="images/avatar.jpg" alt="Avatar" class="avatar" />
-    <h1>I am Ko Ko Aung, a Data Analyst</h1>
-    <p>Transforming data into meaningful insights with the power of computer science</p>
-    <a class="btn btn-light mt-3" href="https://github.com/KoKoAungStar/DataAnalystBootcamp/blob/main/Ko%20Ko%20Aung.pdf" target="_blank">Download CV</a>
+    <img src="images/avatar.jpg" alt="Ko Ko Aung">
+    <h1>Ko Ko Aung</h1>
+    <p>Data Analyst | Transforming Data Into Decisions</p>
   </header>
 
-  <section class="container py-5" id="projects">
-    <div class="text-center mb-4">
-      <h2 class="section-title" data-aos="fade-up">Recent Work</h2>
-      <p data-aos="fade-up" data-aos-delay="100">Highlights of my data projects</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-6" data-aos="zoom-in">
-        <div class="card shadow-sm">
-          <img src="images/thumbs/01.jpg" class="card-img-top" alt="Excel Project">
-          <div class="card-body">
-            <h5 class="card-title"><a class="prolink" href="https://github.com/KoKoAungStar/DataAnalystBootcamp/blob/main/Excel%20Project.xlsx" target="_blank">Excel Project <i class="fa-solid fa-up-right-from-square"></i></a></h5>
-            <p>Create a data analyst project using Excel</p>
-          </div>
-        </div>
+  <section>
+    <h2 style="text-align:center; color:#fff; margin-bottom:2rem;">🚀 Featured Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <img src="images/thumbs/01.jpg" alt="Excel Project">
+        <h3>Excel Project</h3>
+        <p>Create a data analyst project using Excel</p>
       </div>
-      <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
-        <div class="card shadow-sm">
-          <img src="images/thumbs/02.jpg" class="card-img-top" alt="Covid SQL">
-          <div class="card-body">
-            <h5 class="card-title"><a class="prolink" href="https://github.com/KoKoAungStar/DataAnalystBootcamp/blob/main/COVID%20Portfolio%20Project%20-%20Data%20Exploration.sql" target="_blank">Covid Data Exploration <i class="fa-solid fa-up-right-from-square"></i></a></h5>
-            <p>Query real-world Covid data using SQL</p>
-          </div>
-        </div>
+      <div class="project">
+        <img src="images/thumbs/02.jpg" alt="Covid SQL">
+        <h3>Covid Data Exploration</h3>
+        <p>Query real world covid data using SQL</p>
       </div>
-      <div class="col-md-6" data-aos="zoom-in" data-aos-delay="200">
-        <div class="card shadow-sm">
-          <img src="images/thumbs/03.jpg" class="card-img-top" alt="Data Cleaning">
-          <div class="card-body">
-            <h5 class="card-title"><a class="prolink" href="https://github.com/KoKoAungStar/DataAnalystBootcamp/blob/main/Data%20Cleaning%20Portfolio%20Project%20Queries.sql" target="_blank">Data Cleaning <i class="fa-solid fa-up-right-from-square"></i></a></h5>
-            <p>Clean and analyze large housing datasets</p>
-          </div>
-        </div>
+      <div class="project">
+        <img src="images/thumbs/03.jpg" alt="Data Cleaning">
+        <h3>Data Cleaning</h3>
+        <p>Transform raw housing data into actionable insights</p>
       </div>
-      <div class="col-md-6" data-aos="zoom-in" data-aos-delay="300">
-        <div class="card shadow-sm">
-          <img src="images/thumbs/04.jpg" class="card-img-top" alt="Amazon Webscraping">
-          <div class="card-body">
-            <h5 class="card-title"><a class="prolink" href="https://github.com/KoKoAungStar/DataAnalystBootcamp/blob/main/Amazon%20Web%20Scraper%20Project.ipynb" target="_blank">Amazon Webscraping <i class="fa-solid fa-up-right-from-square"></i></a></h5>
-            <p>Scrape product data from Amazon eCommerce site</p>
-          </div>
-        </div>
+      <div class="project">
+        <img src="images/thumbs/04.jpg" alt="Web Scraping">
+        <h3>Amazon Web Scraping</h3>
+        <p>Extract real-time eCommerce data using Python</p>
       </div>
-    </div>
-  </section>
-
-  <section class="bg-light py-5" id="contact">
-    <div class="container">
-      <div class="text-center mb-4">
-        <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
-        <p data-aos="fade-up" data-aos-delay="100">I welcome your questions and feedback!</p>
-      </div>
-      <form id="contact-form" class="row g-3" data-aos="fade-up" action="mailto:kokoaung.dev@gmail.com" method="post" enctype="text/plain">
-        <div class="col-md-6">
-          <input type="text" class="form-control" placeholder="Your Name" name="name" required />
-        </div>
-        <div class="col-md-6">
-          <input type="email" class="form-control" placeholder="Your Email" name="email" required />
-        </div>
-        <div class="col-12">
-          <textarea class="form-control" rows="4" placeholder="Your Message" name="message" required></textarea>
-        </div>
-        <div class="col-12 text-center">
-          <button type="submit" class="btn btn-primary">Send Message</button>
-        </div>
-      </form>
     </div>
   </section>
 
   <footer>
-    <div>
-      <p>&copy; 2025 Ko Ko Aung. All rights reserved.</p>
-      <div class="mt-2">
-        <a href="https://www.linkedin.com/in/ko-ko-aung-dev" class="text-white mx-2" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/KoKoAungStar" class="text-white mx-2" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="mailto:kokoaung.dev@gmail.com" class="text-white mx-2"><i class="fas fa-envelope"></i></a>
-      </div>
+    <div class="icons">
+      <a href="https://www.linkedin.com/in/ko-ko-aung-dev" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/KoKoAungStar" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="mailto:kokoaung.dev@gmail.com"><i class="fas fa-envelope"></i></a>
     </div>
+    <p style="color:#777; margin-top:1rem">&copy; 2025 Ko Ko Aung. All rights reserved.</p>
   </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
 </body>
 
 </html>
