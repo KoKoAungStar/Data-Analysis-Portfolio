@@ -1,31 +1,34 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ko Ko Aung | Data Analyst</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ko Ko Aung - Creative Data Analyst</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
       color: #fff;
       overflow-x: hidden;
-      scroll-behavior: smooth;
     }
 
     header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      padding: 4rem 1rem;
-      animation: fadeIn 2s ease-in-out;
+      padding: 3rem 1rem;
+      animation: fadeInDown 1.2s ease-out;
     }
 
     header img {
@@ -34,99 +37,134 @@
       height: 150px;
       object-fit: cover;
       border: 4px solid #fff;
+      box-shadow: 0 0 15px #00f7ff;
     }
 
     header h1 {
+      font-family: 'Orbitron', sans-serif;
       margin-top: 1rem;
-      font-size: 2.5rem;
-      color: #00f7ff;
-      text-shadow: 0 0 10px #00f7ff;
+      font-size: 2rem;
     }
 
     header p {
-      font-size: 1.2rem;
-      color: #eee;
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-top: 0.5rem;
     }
 
     section {
       padding: 3rem 2rem;
-      max-width: 1000px;
-      margin: auto;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    section h2::after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background: #00f7ff;
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
-      animation: slideIn 2s ease-in-out;
     }
 
     .project {
-      background-color: rgba(255, 255, 255, 0.05);
-      border: 1px solid #00f7ff88;
-      border-radius: 12px;
-      padding: 1rem;
+      background: #1e1e2f;
+      border-radius: 20px;
+      overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .project:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 247, 255, 0.3);
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #00f7ff;
     }
 
     .project img {
       width: 100%;
-      border-radius: 10px;
+      height: 200px;
+      object-fit: cover;
     }
 
-    .project h3 {
+    .project-info {
+      padding: 1rem;
+    }
+
+    .project-info h3 {
       color: #00f7ff;
-      margin: 1rem 0 0.5rem;
+      font-size: 1.2rem;
     }
 
-    .project p {
-      color: #ccc;
+    .project-info p {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border-radius: 10px;
+      border: none;
+      background: #2f2f46;
+      color: #fff;
+    }
+
+    .contact-form button {
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 10px;
+      background: #00f7ff;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .contact-form button:hover {
+      background: #00c9cc;
     }
 
     footer {
       text-align: center;
       padding: 2rem;
-      background-color: #111;
-      margin-top: 2rem;
+      background: #151521;
     }
 
-    .icons a {
-      color: #00f7ff;
+    footer .icons a {
       margin: 0 10px;
+      color: #00f7ff;
       font-size: 1.5rem;
       transition: transform 0.3s ease;
     }
 
-    .icons a:hover {
-      transform: scale(1.2);
+    footer .icons a:hover {
+      transform: scale(1.3);
     }
 
-    @keyframes fadeIn {
-      from {
+    @keyframes fadeInDown {
+      0% {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(-40px);
       }
-
-      to {
+      100% {
         opacity: 1;
         transform: translateY(0);
-      }
-    }
-
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: translateX(-50px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateX(0);
       }
     }
   </style>
@@ -136,43 +174,80 @@
   <header>
     <img src="images/avatar.jpg" alt="Ko Ko Aung">
     <h1>Ko Ko Aung</h1>
-    <p>Data Analyst | Transforming Data Into Decisions</p>
+    <p>Creative Data Analyst transforming complex data into valuable insights</p>
+    <p>Powered by Computer Science</p>
   </header>
 
-  <section>
-    <h2 style="text-align:center; color:#fff; margin-bottom:2rem;">🚀 Featured Projects</h2>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I have over 2 years of experience as a Data Analyst in various organizations. My work begins with developing applications based on user requirements, followed by collecting, cleaning, and transforming data to generate meaningful insights for multiple departments.</p>
+    <p><a href="https://github.com/KoKoAungStar/DataAnalystBootcamp/blob/main/Ko%20Ko%20Aung.pdf" target="_blank" style="color: #00f7ff; text-decoration: underline;">Download My CV</a></p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
     <div class="projects">
       <div class="project">
         <img src="images/thumbs/01.jpg" alt="Excel Project">
-        <h3>Excel Project</h3>
-        <p>Create a data analyst project using Excel</p>
+        <div class="project-info">
+          <h3><a href="https://github.com/KoKoAungStar/DataAnalystBootcamp/blob/main/Excel%20Project.xlsx" target="_blank">Excel Project <i class="fas fa-external-link-alt"></i></a></h3>
+          <p>Data analysis using Microsoft Excel tools.</p>
+        </div>
       </div>
       <div class="project">
         <img src="images/thumbs/02.jpg" alt="Covid SQL">
-        <h3>Covid Data Exploration</h3>
-        <p>Query real world covid data using SQL</p>
+        <div class="project-info">
+          <h3><a href="https://github.com/KoKoAungStar/DataAnalystBootcamp/blob/main/COVID%20Portfolio%20Project%20-%20Data%20Exploration.sql" target="_blank">COVID SQL Exploration <i class="fas fa-external-link-alt"></i></a></h3>
+          <p>Exploring COVID data with SQL queries.</p>
+        </div>
       </div>
       <div class="project">
         <img src="images/thumbs/03.jpg" alt="Data Cleaning">
-        <h3>Data Cleaning</h3>
-        <p>Transform raw housing data into actionable insights</p>
+        <div class="project-info">
+          <h3><a href="https://github.com/KoKoAungStar/DataAnalystBootcamp/blob/main/Data%20Cleaning%20Portfolio%20Project%20Queries.sql" target="_blank">Housing Data Cleaning <i class="fas fa-external-link-alt"></i></a></h3>
+          <p>Refining housing dataset for deeper insights.</p>
+        </div>
       </div>
       <div class="project">
-        <img src="images/thumbs/04.jpg" alt="Web Scraping">
-        <h3>Amazon Web Scraping</h3>
-        <p>Extract real-time eCommerce data using Python</p>
+        <img src="images/thumbs/04.jpg" alt="Amazon Scraper">
+        <div class="project-info">
+          <h3><a href="https://github.com/KoKoAungStar/DataAnalystBootcamp/blob/main/Amazon%20Web%20Scraper%20Project.ipynb" target="_blank">Amazon Web Scraper <i class="fas fa-external-link-alt"></i></a></h3>
+          <p>Scraping eCommerce data for real-world analysis.</p>
+        </div>
       </div>
     </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <form class="contact-form" onsubmit="sendEmail(event)">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" rows="4" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
   <footer>
     <div class="icons">
       <a href="https://www.linkedin.com/in/ko-ko-aung-dev" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://github.com/KoKoAungStar" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="mailto:kokoaung.dev@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="mailto:kokoaung.dev@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
     </div>
-    <p style="color:#777; margin-top:1rem">&copy; 2025 Ko Ko Aung. All rights reserved.</p>
+    <p>&copy; 2025 Ko Ko Aung. All rights reserved.</p>
   </footer>
+
+  <script>
+    function sendEmail(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      const subject = `Message from ${name}`;
+      const body = `${message}\n\nBest regards,\n${name}\nEmail: ${email}`;
+      window.location.href = `mailto:kokoaung.dev@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+  </script>
 </body>
 
 </html>
